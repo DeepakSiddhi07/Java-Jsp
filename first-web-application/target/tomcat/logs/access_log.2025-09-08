@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [08/Sep/2025:16:23:33 +0530] "GET / HTTP/1.1" 200 91 http-bio-8080-exec-1 31
+0:0:0:0:0:0:0:1 - - [08/Sep/2025:16:23:33 +0530] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-2 3
+0:0:0:0:0:0:0:1 - - [08/Sep/2025:16:42:49 +0530] "GET / HTTP/1.1" 200 91 http-bio-8080-exec-1 27
+0:0:0:0:0:0:0:1 - - [08/Sep/2025:16:42:56 +0530] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 1047 http-bio-8080-exec-2 2
+0:0:0:0:0:0:0:1 - - [08/Sep/2025:16:43:18 +0530] "GET / HTTP/1.1" 200 91 http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [08/Sep/2025:16:43:19 +0530] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 1047 http-bio-8080-exec-4 1
