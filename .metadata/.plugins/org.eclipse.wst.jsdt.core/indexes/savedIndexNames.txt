@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+/home/golu/Desktop/Java_Eclipse/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-4254368311.index
-3752964206.index
-1893228044.index
-705927372.index
-4034325136.index
-3500445442.index
