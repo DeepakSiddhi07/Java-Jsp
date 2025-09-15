@@ -1,5 +1,5 @@
 package com.in28minutes.jee;
-//user30
+//more users added
 public class UserValidationService {
 	
 	public boolean isUserValid(String user,String password) {
