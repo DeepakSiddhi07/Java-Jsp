@@ -1,4 +1,4 @@
-package com.in28minutes.login;
+package com.in28minutes.login ;
 
 import com.in28minutes.login.UserValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,6 @@ public class LoginController {
     UserValidationService service ; //dependency injection
 
     @RequestMapping(value = "/login",method = RequestMethod.GET )
-
     public String showLoginPage(){
         return "login";
     }

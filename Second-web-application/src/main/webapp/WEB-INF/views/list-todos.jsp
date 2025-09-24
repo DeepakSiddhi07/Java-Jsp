@@ -7,6 +7,7 @@
 <title>Yahoo!!!!!</title>
 </head>
 <body>
+    <h1>Hi ${name} </h1> <br/>
 	<h1>Your Todos are:</h1>
 	${todos}
 </body>

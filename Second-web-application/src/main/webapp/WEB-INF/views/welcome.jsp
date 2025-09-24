@@ -7,7 +7,8 @@
 <title>Yahoo!!!!!</title>
 </head>
 <body>
-	<h1>WELCOME ${name} amd Password is ${password}</h1>
+	<h1>WELCOME ${name}  </h1> <br/>
+	Now, you can <a href="/list-todos?name=${name}">manage your todos.</a>
 	
 </body>
 </html>

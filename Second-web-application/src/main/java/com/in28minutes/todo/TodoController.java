@@ -14,8 +14,8 @@ public class TodoController {
     TodoService service ; //dependency injection
 
     @RequestMapping(value = "/list-todos",method = RequestMethod.GET )
-
-    public String showLoginPage(ModelMap model){
+    public String showLoginPage(@RequestParam String name, ModelMap model){
+        model.addAttribute("name",name);
         model.addAttribute("todos",service.retrieveTodos("in28Minutes"));
         return "list-todos";
     }
