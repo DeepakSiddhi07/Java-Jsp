@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +7,10 @@
 <title>Yahoo!!!!!</title>
 </head>
 <body>
-    <h1>Hi ${name} </h1> <br/>
-	<h1>Your Todos are:</h1>
-	${todos} </br>
-	<a class="button" href="/add-todo">Add</a>
+    <h1> Add a todo </h1>
+    <form action="/add-todo" method="post">
+        <input name="desc" type="text"/>
+        <input type = "submit" value="Add"/>
+    </form>
 </body>
 </html>

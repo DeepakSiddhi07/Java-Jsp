@@ -16,10 +16,11 @@ public class TodoService {
         todos.add(new Todo(1, false, new Date(),"in28Minutes",
                 "Learn Spring MVC"));
         todos.add(new Todo(2, false, new Date(),"in28Minutes" , "hiih"));
-        todos.add(new Todo(2, false, new Date(),"in28Minutes" , "Learn Hibernate"));
+        todos.add(new Todo(3, false, new Date(),"in28Minutes" , "Learn Hibernate"));
     }
     public void addTodo(String name, String desc, Date targetDate, boolean isDone) {
         todos.add(new Todo(++todoCount,isDone,targetDate,name, desc));
+        System.out.println("All Todos: " + todos);
     }
 
     public void deleteTodo(int id) {
