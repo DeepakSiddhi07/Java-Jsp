@@ -4,12 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Yahoo!!!!!</title>
-<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-	    		rel="stylesheet">
-</head>
-<body>
+<%@ include file="common/header.jspf" %>
+<%@ include file="common/navigation.jspf" %>
 <div class="container">
     <h1> Add a todo </h1>
     <form:form  method="post" commandName="todo">
@@ -27,7 +23,4 @@
         <input class="btn btn-success" type = "submit"  value="Submit"/>
     </form:form>
 </div>
-<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-    	    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</body>
-</html>
+<%@ include file="common/footer.jspf" %>
