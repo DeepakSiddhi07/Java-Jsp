@@ -1,11 +1,14 @@
 package com.in28minutes.todo;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Objects;
 
 public class Todo {
     private  int id;
     private  String user;
+
+    @Size(min=6,message = "Enter atleast 6 characters ")
     private String desc;
     private Date targetDate;
     private boolean isDone;

@@ -3,11 +3,13 @@ package com.in28minutes.todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import javax.validation.Valid;
 import java.util.Date;
 
 @Controller
@@ -26,12 +28,15 @@ public class TodoController {
 
     @RequestMapping(value = "/add-todo",method = RequestMethod.GET )
     public String showLoginPage(ModelMap model){
-        model.addAttribute("todo",new Todo(1, false, new Date(), "in28Minutes", "Default Desc"));
+        model.addAttribute("todo",new Todo(1, false, new Date(), "in28Minutes", ""));
 
         return "todo";
     }
     @RequestMapping(value = "/add-todo",method = RequestMethod.POST )
-    public String addTodo(ModelMap model,Todo todo){
+    public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result){
+        if (result.hasErrors()){
+            return "todo";
+        }
         service.addTodo("in28Minutes",todo.getDesc(),new Date(),false);
          model.clear();
         return "redirect:list-todos";
