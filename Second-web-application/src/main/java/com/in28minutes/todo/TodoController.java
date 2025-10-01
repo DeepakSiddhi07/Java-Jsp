@@ -8,6 +8,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,8 +31,16 @@ public class TodoController {
     @RequestMapping(value = "/list-todos",method = RequestMethod.GET )
     public String listTodos( ModelMap model){
 //        model.addAttribute("name",name);
-        model.addAttribute("todos",service.retrieveTodos("in28Minutes"));
+        model.addAttribute("todos",service.retrieveTodos(retrieveLoggedinUserName()));
         return "list-todos";
+    }
+
+    private  String retrieveLoggedinUserName(){
+        Object principal = SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails)
+            return ((UserDetails) principal).getUsername();
+        return principal.toString();
     }
 
     @RequestMapping(value = "/add-todo",method = RequestMethod.GET )
