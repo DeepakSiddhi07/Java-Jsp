@@ -1,9 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html>
-<html>
-<head>
 <%@ include file="common/header.jspf" %>
 <%@ include file="common/navigation.jspf" %>
 <div class="container">
