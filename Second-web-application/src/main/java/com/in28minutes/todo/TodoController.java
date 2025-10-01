@@ -28,12 +28,8 @@ public class TodoController {
     @RequestMapping(value = "/list-todos",method = RequestMethod.GET )
     public String listTodos( ModelMap model){
 //        model.addAttribute("name",name);
-        model.addAttribute("todos",service.retrieveTodos(retriveLoggedinUserName()));
+        model.addAttribute("todos",service.retrieveTodos("in28Minutes"));
         return "list-todos";
-    }
-
-    private static String retriveLoggedinUserName() {
-        return "in28Minutes";
     }
 
     @RequestMapping(value = "/add-todo",method = RequestMethod.GET )
