@@ -26,6 +26,9 @@ public class Todo {
         this.desc = desc;
     }
 
+    public Todo(int i, String s, Date date, boolean b) {
+    }
+
     public int getId() {
         return id;
     }

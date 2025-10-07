@@ -1,5 +1,8 @@
 package com.in28minutes.todo;
 
+import com.in28minutes.exception.ExceptionController;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,6 +22,7 @@ import java.util.Date;
 @Controller
 @SessionAttributes("name")
 public class TodoController {
+    private Log logger =  LogFactory.getLog(ExceptionController.class);
     //Set the login Service-Auto wiring
     @Autowired
     TodoService service ; //dependency injection
@@ -44,10 +49,11 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/add-todo",method = RequestMethod.GET )
-    public String showLoginPage(ModelMap model){
-        model.addAttribute("todo",new Todo(1, false, new Date(), "in28Minutes", ""));
-
-        return "todo";
+    public String showTodoPage(ModelMap model){
+        throw new RuntimeException("Dummy EXPT");
+//        model.addAttribute("todo",new Todo(0, retrieveLoggedinUserName(),new Date(),false));
+//
+//        return "todo";
     }
     @RequestMapping(value = "/add-todo",method = RequestMethod.POST )
     public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result){
@@ -79,6 +85,12 @@ public class TodoController {
         service.deleteTodo(id);
         model.clear();
         return "redirect:list-todos";
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    public String handleException(HttpServletRequest request, Exception ex){
+        logger.error("Request"+request.getRequestURL()+"Throw an exception",ex);
+        return "error-specific";
     }
 
 
