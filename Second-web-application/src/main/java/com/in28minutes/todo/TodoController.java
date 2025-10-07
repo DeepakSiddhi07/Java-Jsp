@@ -75,7 +75,7 @@ public class TodoController {
         if (result.hasErrors()){
             return "todo";
         }
-        todo.setUser("in28Minutes"); // Todo:Remove hard code
+        todo.setUser(retrieveLoggedinUserName());
         //Update to do
         service.updateTodo(todo);
         return "redirect:list-todos";
